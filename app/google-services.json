@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29314940665",
+    "project_id": "myfriendapi",
+    "storage_bucket": "myfriendapi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29314940665:android:739f42133a627c133b2c28",
+        "android_client_info": {
+          "package_name": "com.marshanda.myfriendapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29314940665-7ojv6o79o0t7e5e8akp5b3pqqoo9rcui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE9tCIrHd7eMhKUk032G7dSH2RDb67fuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29314940665-7ojv6o79o0t7e5e8akp5b3pqqoo9rcui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

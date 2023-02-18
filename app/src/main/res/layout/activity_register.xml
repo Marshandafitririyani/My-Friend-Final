@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fanta_50"
+    tools:context=".ui.register.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/iv_back_register"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        android:elevation="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:background="?selectableItemBackground"
+        android:foreground="?selectableItemBackground"
+        android:src="@drawable/ic_back" />
+
+    <ImageView
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/logoo"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_80sdp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_150sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_13sdp"
+            android:gravity="center"
+            android:text="MY FRIEND"
+            android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_25ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="@dimen/_13sdp"
+            android:gravity="center"
+            android:text="Create Your New Account"
+            android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_15ssp" />
+
+        <EditText
+            android:id="@+id/et_name_register"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/custome_kotak"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="@dimen/_8sdp"
+            android:hint="name"
+            android:padding="@dimen/_10sdp" />
+
+
+        <EditText
+            android:id="@+id/et_phone_register"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/custome_kotak"
+            android:drawableStart="@drawable/ic_smartphone"
+            android:drawablePadding="@dimen/_8sdp"
+            android:hint="phone"
+            android:padding="@dimen/_10sdp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/et_password_register"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:background="@drawable/custome_kotak"
+                android:drawableStart="@drawable/ic_password"
+                android:hint="Password"
+                android:drawablePadding="@dimen/_8sdp"
+                android:inputType="textPassword"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@drawable/custome_buttom"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_18ssp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Already have an account?Log in"
+            android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_14ssp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+</layout>

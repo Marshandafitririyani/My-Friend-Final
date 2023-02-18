@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyFriendAPI</string>
+    <string name="label_must_fill">Wajib diisi.</string>
+</resources>
