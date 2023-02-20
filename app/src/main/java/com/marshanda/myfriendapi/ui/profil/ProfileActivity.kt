@@ -1,5 +1,6 @@
 package com.marshanda.myfriendapi.ui.profil
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContentProviderCompat.requireContext
@@ -32,6 +33,15 @@ class ProfileActivity :
         binding.btnEditProfil.setOnClickListener {
            openActivity<EditProfileActivity> {  }
 
+        }
+
+        binding.btnEditProfil.setOnClickListener {
+            val kembali = Intent(this, EditProfileActivity::class.java).apply {
+                putExtra("username", binding?.user?.name, )
+                putExtra("schoolname", binding?.user?.school)
+                putExtra("descriptionname", binding?.user?.description)
+            }
+            startActivity(kembali)
         }
 
         lifecycleScope.launch {

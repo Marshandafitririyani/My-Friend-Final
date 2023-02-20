@@ -30,7 +30,7 @@ class DetailViewModel  @Inject constructor(
 
     val getDetail = userDao.getUser()
 
-    fun getLike(myId: String, friendId: String) = viewModelScope.launch {
+    fun getLike(myId: Int?, friendId: Int?) = viewModelScope.launch {
         ApiObserver({ apiService.like(id_like = friendId, id = myId) }, false, object : ApiObserver.ResponseListener {
             override suspend fun onSuccess(response: JSONObject) {
                 /*val data =

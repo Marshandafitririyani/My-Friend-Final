@@ -70,7 +70,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
 
         viewModel.myUser.observe(this) {
             user = it
-            viewModel.getList(it.id)
+            user?.id?.let { viewModel.getList(it) }
+//            viewModel.getList(it.id)
         }
 
         viewModel.dataList.observe(this@HomeActivity) {

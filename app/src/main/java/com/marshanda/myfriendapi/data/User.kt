@@ -16,7 +16,7 @@ data class User(
     val idRoom: Int,
     @Expose
     @SerializedName("id")
-    val id: String,
+    val id: Int,
     @Expose
     @SerializedName("name")
     val name : String,

@@ -31,7 +31,7 @@ class HomeViewModel @Inject constructor(
 
     val myUser = userDao.getUser()
 
-    fun getList(userId: String) = viewModelScope.launch {
+    fun getList(userId: Int? ) = viewModelScope.launch {
         ApiObserver({ apiService.listFriend234(userId) }, false, object : ApiObserver.ResponseListener {
             override suspend fun onSuccess(response: JSONObject) {
                 val data =

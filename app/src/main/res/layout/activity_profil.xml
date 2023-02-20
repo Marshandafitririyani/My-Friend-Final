@@ -65,6 +65,7 @@
         android:padding="@dimen/_9sdp"
         android:text='@{user.name}'
         android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +92,7 @@
         android:layout_margin="@dimen/_1sdp"
         android:background="@drawable/custome_button_tepi"
         android:padding="@dimen/_9sdp"
+        android:textColor="@color/black"
         android:text='@{user.school}'
         android:textSize="@dimen/_15ssp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -116,6 +118,7 @@
         android:layout_width="@dimen/_270sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_gravity="center"
+        android:textColor="@color/black"
         android:layout_margin="@dimen/_6sdp"
         android:background="@drawable/custome_button_tepi"
         android:padding="@dimen/_9sdp"

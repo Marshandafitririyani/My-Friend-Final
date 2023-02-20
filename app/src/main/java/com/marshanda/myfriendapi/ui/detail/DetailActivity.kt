@@ -31,7 +31,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding, DetailViewModel>(R.la
         binding.btnLike.setOnClickListener {
             val myId = myUser?.id
             val friendId = list?.id
-            viewModel.getLike(myId ?: "0", friendId ?: "0")
+            viewModel.getLike(myId , friendId)
         }
 
         lifecycleScope.launch {

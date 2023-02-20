@@ -1,10 +1,7 @@
 package com.marshanda.myfriendapi.api
 
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import okhttp3.MultipartBody
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -25,10 +22,20 @@ interface ApiService {
     @FormUrlEncoded
     @POST("api/update-profile")
     suspend fun updateProfil(
+        @Field("id_user") id_user: Int?,
         @Field("name") name: String?,
         @Field("school") school: String?,
-//        @Field("phone") phone: String?,
         @Field("description") description: String?,
+    ): String
+
+    @Multipart
+    @POST("api/update-profile")
+    suspend fun updateProfileWithPhoto(
+        @Query("id_user") id_user: Int?,
+        @Query("name") name: String?,
+        @Query("school") school: String?,
+        @Query("description") description: String?,
+        @Part photo: MultipartBody.Part?
     ): String
 
     @GET("api/get-list-friends?users_id=2")
@@ -37,12 +44,12 @@ interface ApiService {
     @FormUrlEncoded
     @POST("api/like")
     suspend fun like(
-        @Field("users_id") id: String,
-        @Field("user_id_i_like") id_like: String
+        @Field("users_id") id:  Int?,
+        @Field("user_id_i_like") id_like: Int?,
     ): String
 
     @GET("api/get-list-friends")
     suspend fun listFriend234(
-        @Query("users_id") userId: String
+        @Query("users_id") userId: Int?,
     ): String
 }
