@@ -3,6 +3,8 @@ package com.marshanda.myfriendapi.ui.home
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.doOnTextChanged
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.crocodic.core.base.adapter.CoreListAdapter
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
@@ -64,8 +66,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
                 .initItem(list) { position, data ->
                     openActivity<DetailActivity> {
                         putExtra(Const.LIST.LIST, data)
+
                     }
+
                 }
+
 
         viewModel.myUser.observe(this) {
             user = it

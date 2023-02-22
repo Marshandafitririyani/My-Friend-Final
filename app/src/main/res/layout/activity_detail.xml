@@ -36,7 +36,7 @@
             android:layout_height="@dimen/_160sdp"
             android:layout_gravity="center"
             android:contentDescription="@string/profile_photo"
-            android:src="@drawable/img_picture"
+            imageUrl='@{detail.photo}'
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"

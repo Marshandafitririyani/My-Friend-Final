@@ -2,8 +2,6 @@ package com.marshanda.myfriendapi.ui.detail
 
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.crocodic.core.api.ApiStatus
 import com.crocodic.core.extension.tos
 import com.marshanda.myfriendapi.R
@@ -18,20 +16,20 @@ import kotlinx.coroutines.launch
 class DetailActivity :
     BaseActivity<ActivityDetailBinding, DetailViewModel>(R.layout.activity_detail) {
 
-    private var list: User? = null
+    private var friend: User? = null
     private var myUser: User? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        list = intent.getParcelableExtra(Const.LIST.LIST)
-        binding.detail = list
+        friend = intent.getParcelableExtra(Const.LIST.LIST)
+        binding.detail = friend
 
         viewModel.user.observe(this) {
             myUser = it
         }
         binding.btnLike.setOnClickListener {
             val myId = myUser?.id
-            val friendId = list?.id
+            val friendId = friend?.id
             viewModel.getLike(myId, friendId)
         }
 
@@ -43,22 +41,6 @@ class DetailActivity :
 
                 } else {
                     tos("don't like")
-                }
-            }
-            viewModel.getDetail.observe(this@DetailActivity) {
-                it?.let { data ->
-                    binding.detail = data
-                    binding.let { viewImage ->
-                        //untuk profilenya
-                        Glide
-                            .with(this@DetailActivity)
-                            .load(it.photo)
-                            .placeholder(R.drawable.img_picture)
-                            .error(R.drawable.ic_person)
-                            .apply(RequestOptions.centerInsideTransform())
-                            .into(viewImage.ivImageDetail)
-
-                    }
                 }
             }
         }
