@@ -19,24 +19,24 @@ data class User(
     val id: Int,
     @Expose
     @SerializedName("name")
-    val name : String,
+    val name: String,
     @Expose
     @SerializedName("phone")
     val phone: String,
     @Expose
     @SerializedName("school")
-    val school : String?,
+    val school: String?,
     @Expose
     @SerializedName("photo")
-    val photo : String?,
+    val photo: String?,
     @Expose
     @SerializedName("description")
-    val description : String?,
+    val description: String?,
     @Expose
     @SerializedName("total_like")
-    val total_like : String?,
+    val total_like: String?,
     @Expose
     @SerializedName("like_by_you")
-    val like_by_you : String?,
+    val like_by_you: String?,
 
-) : Parcelable
+    ) : Parcelable

@@ -4,8 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.crocodic.core.api.ApiCode
 import com.crocodic.core.api.ApiObserver
-import com.crocodic.core.api.ApiResponse
-import com.crocodic.core.data.CoreSession
 import com.crocodic.core.extension.toList
 import com.google.gson.Gson
 import com.marshanda.myfriendapi.api.ApiService
@@ -22,24 +20,26 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val apiService: ApiService,
     private val gson: Gson,
-    private val userDao: UserDao,
-    private val session: CoreSession
+    private val userDao: UserDao
 
-): BaseViewModel() {
+) : BaseViewModel() {
 
     val dataList = MutableLiveData<List<User>>()
 
     val myUser = userDao.getUser()
 
-    fun getList(userId: Int? ) = viewModelScope.launch {
-        ApiObserver({ apiService.listFriend234(userId) }, false, object : ApiObserver.ResponseListener {
-            override suspend fun onSuccess(response: JSONObject) {
-                val data =
-                    response.getJSONArray(ApiCode.DATA).toList<User>(gson)
-                dataList.postValue(data)
-                Timber.d("cek api ${data.size}")
-            }
-        })
+    fun getList(userId: Int?) = viewModelScope.launch {
+        ApiObserver(
+            { apiService.listFriend234(userId) },
+            false,
+            object : ApiObserver.ResponseListener {
+                override suspend fun onSuccess(response: JSONObject) {
+                    val data =
+                        response.getJSONArray(ApiCode.DATA).toList<User>(gson)
+                    dataList.postValue(data)
+                    Timber.d("cek api ${data.size}")
+                }
+            })
 
 
     }
@@ -48,6 +48,6 @@ class HomeViewModel @Inject constructor(
     fun logout(logout: () -> Unit) = viewModelScope.launch {
         logout()
         logoutSuccess()
-}
-
     }
+
+}

@@ -15,7 +15,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class DetailActivity : BaseActivity<ActivityDetailBinding, DetailViewModel>(R.layout.activity_detail) {
+class DetailActivity :
+    BaseActivity<ActivityDetailBinding, DetailViewModel>(R.layout.activity_detail) {
 
     private var list: User? = null
     private var myUser: User? = null
@@ -25,13 +26,13 @@ class DetailActivity : BaseActivity<ActivityDetailBinding, DetailViewModel>(R.la
         list = intent.getParcelableExtra(Const.LIST.LIST)
         binding.detail = list
 
-        viewModel.user.observe(this){
+        viewModel.user.observe(this) {
             myUser = it
         }
         binding.btnLike.setOnClickListener {
             val myId = myUser?.id
             val friendId = list?.id
-            viewModel.getLike(myId , friendId)
+            viewModel.getLike(myId, friendId)
         }
 
         lifecycleScope.launch {
@@ -40,9 +41,10 @@ class DetailActivity : BaseActivity<ActivityDetailBinding, DetailViewModel>(R.la
 
                     tos("like")
 
-                  } else{tos("don't like")
+                } else {
+                    tos("don't like")
                 }
-              }
+            }
             viewModel.getDetail.observe(this@DetailActivity) {
                 it?.let { data ->
                     binding.detail = data
@@ -51,11 +53,14 @@ class DetailActivity : BaseActivity<ActivityDetailBinding, DetailViewModel>(R.la
                         Glide
                             .with(this@DetailActivity)
                             .load(it.photo)
-                            .placeholder(R.drawable.picture)
+                            .placeholder(R.drawable.img_picture)
                             .error(R.drawable.ic_person)
                             .apply(RequestOptions.centerInsideTransform())
                             .into(viewImage.ivImageDetail)
 
                     }
+                }
+            }
         }
-    }}}}
+    }
+}

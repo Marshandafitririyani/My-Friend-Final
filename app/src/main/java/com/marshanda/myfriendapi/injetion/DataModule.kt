@@ -12,8 +12,6 @@ import com.marshanda.myfriendapi.data.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-//import com.marshanda.myfriendapi.BuildConfig
-//import com.example.mynotes.BuildConfig
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient

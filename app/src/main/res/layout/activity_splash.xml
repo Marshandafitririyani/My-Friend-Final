@@ -10,24 +10,12 @@
     android:background="@color/fanta_50"
     tools:context=".ui.splash.SplashActivity">
 
-
-    <!--
-    <ImageView
-        android:layout_width="527dp"
-        android:layout_height="286dp"
-        android:src="@drawable/lampu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
--->
-
     <TextView
         android:layout_width="328dp"
         android:layout_height="67dp"
         android:fontFamily="@font/poppinssemibold"
         android:gravity="center"
-        android:text="MY FRIEND"
+        android:text="@string/my_friend5"
         android:textColor="@color/fanta_400"
         android:textSize="@dimen/_40sdp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,11 +28,12 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/splas"
+        android:src="@drawable/img_splas"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="67dp"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:contentDescription="@string/todo6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

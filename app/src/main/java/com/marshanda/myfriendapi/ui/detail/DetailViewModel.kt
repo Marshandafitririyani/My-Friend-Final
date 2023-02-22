@@ -17,29 +17,28 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class DetailViewModel  @Inject constructor(
+class DetailViewModel @Inject constructor(
     private val apiService: ApiService,
     private val gson: Gson,
     private val userDao: UserDao,
     private val session: CoreSession
 
-): BaseViewModel() {
+) : BaseViewModel() {
 
-    val dataLike = MutableLiveData<List<User>>()
     val user = userDao.getUser()
 
     val getDetail = userDao.getUser()
 
     fun getLike(myId: Int?, friendId: Int?) = viewModelScope.launch {
-        ApiObserver({ apiService.like(id_like = friendId, id = myId) }, false, object : ApiObserver.ResponseListener {
-            override suspend fun onSuccess(response: JSONObject) {
-                /*val data =
-                    response.getJSONArray(ApiCode.DATA).toList<User>(gson)
-                dataLike.postValue(data)*/
-                _apiResponse.send(ApiResponse().responseSuccess("Liked"))
-                Timber.d("cek api like $response")
-            }
-        })
+        ApiObserver(
+            { apiService.like(id_like = friendId, id = myId) },
+            false,
+            object : ApiObserver.ResponseListener {
+                override suspend fun onSuccess(response: JSONObject) {
+                    _apiResponse.send(ApiResponse().responseSuccess("Liked"))
+                    Timber.d("cek api like $response")
+                }
+            })
 
 
     }

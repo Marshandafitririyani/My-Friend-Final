@@ -1,6 +1,5 @@
 package com.marshanda.myfriendapi.ui.register
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -18,7 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel>(R.layout.activity_register) {
+class RegisterActivity :
+    BaseActivity<ActivityRegisterBinding, RegisterViewModel>(R.layout.activity_register) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,7 +37,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
             val phone = binding.etPhoneRegister.textOf()
             val password = binding.etPasswordRegister.textOf()
 
-            viewModel.register(name,phone, password)
+            viewModel.register(name, phone, password)
 
         }
 
@@ -47,7 +47,8 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
                     viewModel.apiResponse.collect {
                         when (it.status) {
                             ApiStatus.LOADING -> loadingDialog.show("Please Wait Register")
-                            ApiStatus.SUCCESS -> { loadingDialog.show("Succes")
+                            ApiStatus.SUCCESS -> {
+                                loadingDialog.show("Succes")
                                 openActivity<LoginActivity>()
                                 tos("Please Login")
                                 finish()

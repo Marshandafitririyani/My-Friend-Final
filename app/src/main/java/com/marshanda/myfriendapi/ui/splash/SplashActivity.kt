@@ -12,11 +12,11 @@ import com.marshanda.myfriendapi.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SplashActivity :  BaseActivity<ActivitySplashBinding, SplashViewModel>(R.layout.activity_splash)  {
+class SplashActivity :
+    BaseActivity<ActivitySplashBinding, SplashViewModel>(R.layout.activity_splash) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //supaya tidak login ulang
         val userLogin = session.getString(Const.USER.PROFILE)
 
         tos("Cek Login: $userLogin")

@@ -28,7 +28,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
 
         binding.btnLogin.setOnClickListener {
             if (binding.etPhoneLogin.isEmptyRequired(R.string.label_must_fill) ||
-                binding.etPasswordLogin.isEmptyRequired(R.string.label_must_fill)){
+                binding.etPasswordLogin.isEmptyRequired(R.string.label_must_fill)
+            ) {
                 return@setOnClickListener
             }
             val phone = binding.etPhoneLogin.textOf()

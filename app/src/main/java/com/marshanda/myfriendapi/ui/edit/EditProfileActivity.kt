@@ -51,9 +51,8 @@ class EditProfileActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //untuk getExstra menyimpan username
         username = intent.getStringExtra("username")
-        schoolname= intent.getStringExtra("schoolname")
+        schoolname = intent.getStringExtra("schoolname")
         descriptionname = intent.getStringExtra("descriptionname")
         binding.edit = this
         binding.etNameEditProfil.setText(username)
@@ -76,7 +75,6 @@ class EditProfileActivity :
                     return
                 }
 
-        //untuk foto saja
         if (photoFile == null) {
             if (name == username)
                 if (school == schoolname)
@@ -97,7 +95,7 @@ class EditProfileActivity :
 
     }
 
-    //compres photo
+
     suspend fun compressFile(filePhoto: File): File? {
         println("Compress 1")
         try {
@@ -155,6 +153,7 @@ class EditProfileActivity :
             }
         }
     }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -215,7 +214,6 @@ class EditProfileActivity :
             val file = if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
                 createImageFile()
             } else {
-                //File("${Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)}" + File.separator + "BurgerBangor", getNewFileName())
                 File(externalCacheDir?.absolutePath, getNewFileName())
             }
 
@@ -294,7 +292,7 @@ class EditProfileActivity :
         return File.createTempFile(
             "JPEG_${timeStamp}_",
             ".jpg",
-                    storageDir
+            storageDir
         )
     }
 
@@ -312,35 +310,4 @@ class EditProfileActivity :
     }
 }
 
-
-/*
-        binding.btnSaveEditProfil.setOnClickListener {
-
-            val name = binding.etNameEditProfil.textOf()
-            val school = binding.etSchoolEditProfil.textOf()
-//            val phone = binding.etPhoneEditProfil.textOf()
-            val description = binding.etDsctionEditProfil.textOf()
-
-            viewModel.updateProfil(name,school,description)
-        }
-
-
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    viewModel.apiResponse.collect {
-                        when (it.status) {
-                            ApiStatus.LOADING -> loadingDialog.show(" Please Wait Update")
-                            ApiStatus.SUCCESS -> {
-                                loadingDialog.dismiss()
-                                openActivity<EditProfileActivity>()
-                                finish()
-                            }
-                            else -> loadingDialog.setResponse(it.message ?: return@collect)
-                        }
-                    }
-                }
-            }
-        }}}
-*/
 

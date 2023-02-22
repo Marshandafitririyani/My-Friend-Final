@@ -45,9 +45,9 @@ dependencies {
 
     //swip
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
     //Hilt
     implementation 'com.google.dagger:hilt-android:2.44.2'
-//    implementation 'com.google.android.ads:mediation-test-suite:3.0.0'
     kapt 'com.google.dagger:hilt-compiler:2.44.2'
 
     //core
@@ -68,6 +68,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
 
     testImplementation 'junit:junit:4.13.2'

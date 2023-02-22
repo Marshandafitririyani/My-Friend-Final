@@ -11,14 +11,13 @@ interface UserDao : CoreDao<User> {
     suspend fun deleteAll()
 
     @Query("SELECT * FROM User WHERE idRoom = 1")
-    fun getUser() : LiveData<User>
+    fun getUser(): LiveData<User>
 
     @Query("SELECT EXISTS (SELECT 1 FROM User WHERE idRoom + 1)")
     suspend fun isLogin(): Boolean
 
     @Query("SELECT * FROM User WHERE idRoom = 1")
-    suspend fun getId() : User
-
+    suspend fun getId(): User
 
 
 }

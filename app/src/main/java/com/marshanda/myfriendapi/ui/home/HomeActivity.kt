@@ -27,7 +27,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //fungsi untuk filter search
         binding?.srcHome?.doOnTextChanged { text, start, before, count ->
             if (list.isEmpty()) {
                 tos("kosong")
@@ -71,7 +70,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         viewModel.myUser.observe(this) {
             user = it
             user?.id?.let { viewModel.getList(it) }
-//            viewModel.getList(it.id)
         }
 
         viewModel.dataList.observe(this@HomeActivity) {
