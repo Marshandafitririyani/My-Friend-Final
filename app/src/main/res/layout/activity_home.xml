@@ -23,7 +23,7 @@
             android:drawableEnd="@drawable/ic_search"
             android:elevation="@dimen/_30sdp"
             android:focusable="true"
-            android:hint="@string/search"
+            android:hint="@string/search_friend"
             android:imeOptions="actionSearch"
             android:inputType="textPersonName"
             android:padding="@dimen/_12sdp"
@@ -32,7 +32,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:queryHint="search notes"
-            tools:text="search"
+            tools:text="search friend"
             tools:tint="@color/fanta_400" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

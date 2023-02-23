@@ -40,8 +40,7 @@ class LoginViewModel @Inject constructor(
                     session.setValue(Const.USER.PROFILE, "Login")
                     if (status == ApiCode.SUCCESS) {
                         val message = response.getString(ApiCode.MESSAGE)
-                        _apiResponse.send(
-                            ApiResponse(
+                        _apiResponse.send(ApiResponse(
                                 status = ApiStatus.SUCCESS,
                                 message = message
                             )

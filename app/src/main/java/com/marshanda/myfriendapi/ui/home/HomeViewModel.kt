@@ -34,8 +34,7 @@ class HomeViewModel @Inject constructor(
             false,
             object : ApiObserver.ResponseListener {
                 override suspend fun onSuccess(response: JSONObject) {
-                    val data =
-                        response.getJSONArray(ApiCode.DATA).toList<User>(gson)
+                    val data = response.getJSONArray(ApiCode.DATA).toList<User>(gson)
                     dataList.postValue(data)
                     Timber.d("cek api ${data.size}")
                 }

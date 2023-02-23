@@ -49,4 +49,13 @@
     <string name="todo7">TODO</string>
     <string name="todo8">TODO</string>
     <string name="todo9">TODO</string>
+    <string name="search_friend">search friend</string>
+    <string name="name_empty">Name Empty</string>
+    <string name="school_empty2">School Empty</string>
+    <string name="description_empty2">Description Empty</string>
+    <string name="profile">PROFILE</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="register4">REGISTER</string>
+    <string name="detail2">DETAIL</string>
+    <string name="edit_profile2">EDIT PROFILE</string>
 </resources>
