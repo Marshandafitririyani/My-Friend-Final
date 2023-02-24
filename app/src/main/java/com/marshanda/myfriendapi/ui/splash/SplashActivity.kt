@@ -19,8 +19,6 @@ class SplashActivity :
 
         val userLogin = session.getString(Const.USER.PROFILE)
 
-        tos("Cek Login: $userLogin")
-
         viewModel.splash {
             if (userLogin == "Login") {
                 openActivity<HomeActivity>()

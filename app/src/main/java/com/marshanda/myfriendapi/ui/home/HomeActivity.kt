@@ -29,7 +29,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
 
         binding?.srcHome?.doOnTextChanged { text, start, before, count ->
             if (list.isEmpty()) {
-                tos("kosong")
             }
             if (text.isNullOrEmpty()) {
                 list.clear()
