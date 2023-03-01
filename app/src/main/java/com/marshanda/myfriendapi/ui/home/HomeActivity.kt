@@ -60,12 +60,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
             openActivity<SaveActivity>()
         }
 
-        //fungsi logout
         binding.ivLoguot.setOnClickListener {
             viewModel.logout { tos("Logout") }
         }
 
-        //refresh
         binding.swipeRefreshLayout.setOnRefreshListener {
             user?.id?.let { viewModel.getList(it) }
         }
