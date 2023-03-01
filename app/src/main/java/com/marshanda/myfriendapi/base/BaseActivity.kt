@@ -22,7 +22,6 @@ open class BaseActivity<VB : ViewDataBinding, VM : CoreViewModel>(layoutRes: Int
     @Inject
     lateinit var appDatabase: AppDatabase
 
-    //supaya tidal login kembali
     override fun authLogoutSuccess() {
         super.authLogoutSuccess()
         loadingDialog.dismiss()

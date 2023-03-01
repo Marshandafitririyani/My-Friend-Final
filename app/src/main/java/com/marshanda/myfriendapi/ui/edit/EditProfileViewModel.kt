@@ -31,7 +31,6 @@ class EditProfileViewModel @Inject constructor(
 
     fun updateProfil(name: String, school: String, description: String) = viewModelScope.launch {
         _apiResponse.send(ApiResponse().responseLoading())
-        //menyimpan user
         val idUser = userDao.getId().id
         ApiObserver(
             { apiService.updateProfil(idUser, name, school, description) }, false,

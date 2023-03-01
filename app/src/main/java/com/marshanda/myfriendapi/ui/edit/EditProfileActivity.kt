@@ -51,7 +51,6 @@ class EditProfileActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //untuk menampilkan nama yg sudah ada di profil ke editprofil (nama, sekolah, descripsi)
         username = intent.getStringExtra("username")
         schoolname = intent.getStringExtra("schoolname")
         descriptionname = intent.getStringExtra("descriptionname")
@@ -59,7 +58,6 @@ class EditProfileActivity :
         binding.etNameEditProfil.setText(username)
         binding.etSchoolEditProfil.setText(schoolname)
         binding.etDsctionEditProfil.setText(descriptionname)
-
 
         initClick()
         observe()
@@ -70,19 +68,11 @@ class EditProfileActivity :
         val school = binding.etSchoolEditProfil.textOf()
         val description = binding.etDsctionEditProfil.textOf()
 
-        if (name.isEmpty())
-            if (school.isEmpty())
-                if (description.isEmpty()) {
-                    return
-                }
+        if (name.isEmpty() && school.isEmpty() && description.isEmpty()) {
+            return
+        }
 
-        if (photoFile == null) {
-            if (name == username)
-                if (school == schoolname)
-                    if (description == descriptionname) {
-                        tos("Tidak ada yang berubah")
-                        return
-                    }
+        if (photoFile == null && name == username && school == schoolname && description == descriptionname) {
             viewModel.updateProfil(name, school, description)
         } else {
             lifecycleScope.launch {

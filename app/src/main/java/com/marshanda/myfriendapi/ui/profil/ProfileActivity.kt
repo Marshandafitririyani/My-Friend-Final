@@ -38,7 +38,6 @@ class ProfileActivity :
                 it?.let { data ->
                     binding.user = data
                     binding.let { viewImage ->
-                        //untuk profilenya
                         Glide
                             .with(this@ProfileActivity)
                             .load(it.photo)

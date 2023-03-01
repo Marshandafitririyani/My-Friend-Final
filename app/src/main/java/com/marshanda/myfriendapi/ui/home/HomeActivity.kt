@@ -28,7 +28,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //search friend
         binding?.srcHome?.doOnTextChanged { text, start, before, count ->
             if (list.isEmpty()) {
             }
@@ -45,9 +44,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
                 }
                 binding?.rcRecyclerView?.adapter?.notifyDataSetChanged()
                 binding?.rcRecyclerView?.adapter?.notifyItemInserted(0)
-                if (list.isEmpty()){
+                if (list.isEmpty()) {
                     binding.tvEmpty.visibility = View.VISIBLE
-                }else{
+                } else {
                     binding.tvEmpty.visibility = View.GONE
                 }
             }
@@ -98,8 +97,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
             } else {
                 binding.tvEmpty.visibility = View.GONE
             }
-//            //untuk menampilkan pada layout bahwa itu kosong
-//            binding.tvKosong.isVisible = list.isEmpty()
 
             Timber.d("cek data note $it")
             listAll.clear()

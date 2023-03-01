@@ -1,6 +1,5 @@
 package com.marshanda.myfriendapi.ui.detail
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.crocodic.core.api.ApiObserver
 import com.crocodic.core.api.ApiResponse
@@ -8,7 +7,6 @@ import com.crocodic.core.data.CoreSession
 import com.google.gson.Gson
 import com.marshanda.myfriendapi.api.ApiService
 import com.marshanda.myfriendapi.base.BaseViewModel
-import com.marshanda.myfriendapi.data.User
 import com.marshanda.myfriendapi.data.UserDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

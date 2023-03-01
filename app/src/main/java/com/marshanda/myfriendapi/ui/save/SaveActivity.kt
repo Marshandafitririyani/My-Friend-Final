@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class SaveActivity :  BaseActivity<ActivitySaveBinding, SaveViewModel>(R.layout.activity_save) {
+class SaveActivity : BaseActivity<ActivitySaveBinding, SaveViewModel>(R.layout.activity_save) {
 
     private val list = ArrayList<User?>()
     private var user: User? = null
@@ -40,21 +40,23 @@ class SaveActivity :  BaseActivity<ActivitySaveBinding, SaveViewModel>(R.layout.
                 }
 
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED){
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     getTourList()
                 }
             }
         }
     }
+
     private fun getTourList() {
         viewModel.myUser.observe(this) {
             user = it
             user?.id?.let { viewModel.getList(it) }
         }
     }
-    private fun observe(){
-        viewModel.dataList.observe(this){
+
+    private fun observe() {
+        viewModel.dataList.observe(this) {
             val filterByLike = it.filter { it.like_by_you?.contains("true", true) ?: true }
             list.clear()
             list.addAll(filterByLike)

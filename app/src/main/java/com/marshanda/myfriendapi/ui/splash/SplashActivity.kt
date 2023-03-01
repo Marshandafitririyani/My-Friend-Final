@@ -2,7 +2,6 @@ package com.marshanda.myfriendapi.ui.splash
 
 import android.os.Bundle
 import com.crocodic.core.extension.openActivity
-import com.crocodic.core.extension.tos
 import com.marshanda.myfriendapi.R
 import com.marshanda.myfriendapi.base.BaseActivity
 import com.marshanda.myfriendapi.const.Const
@@ -16,8 +15,6 @@ class SplashActivity :
     BaseActivity<ActivitySplashBinding, SplashViewModel>(R.layout.activity_splash) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        //supaya tidak login ulang
         val userLogin = session.getString(Const.USER.PROFILE)
 
         viewModel.splash {
@@ -30,9 +27,3 @@ class SplashActivity :
         }
     }
 }
-//mengecek menggunakan id room(splash)
-//api servis
-/*
-yg detail catagori
-menyederhanakan homeActivity yang catagori 1-3
-*/
