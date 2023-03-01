@@ -19,8 +19,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:foreground="?selectableItemBackground"
             android:layout_margin="@dimen/_5sdp"
+            android:foreground="?selectableItemBackground"
             app:cardCornerRadius="@dimen/_10sdp">
 
             <LinearLayout
@@ -33,6 +33,7 @@
                     imageUrl='@{data.photo}'
                     android:layout_width="@dimen/_80sdp"
                     android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_8sdp"
                     android:contentDescription="@string/todo7" />
 
                 <LinearLayout
@@ -44,6 +45,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
                         android:text='@{data.name}'
                         android:textSize="@dimen/_18sdp"
                         android:textStyle="bold" />
@@ -51,6 +53,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
                         android:text='@{data.school}'
                         android:textSize="@dimen/_12sdp" />
 
@@ -63,7 +66,7 @@
                             android:layout_width="@dimen/_20sdp"
                             android:layout_height="@dimen/_20sdp"
                             android:contentDescription="@string/todo8"
-                            android:src="@drawable/img_heart_polos"
+                            android:src="@drawable/img_heart_plain"
                             android:visibility='@{data.like_by_you == "true" ? View.GONE : View.VISIBLE}' />
 
                         <ImageView

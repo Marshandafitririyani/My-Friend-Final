@@ -23,7 +23,8 @@ class RegisterActivity :
         super.onCreate(savedInstanceState)
 
         binding.ivBackRegister.setOnClickListener {
-            openActivity<LoginActivity>()
+            finish()
+//            openActivity<LoginActivity>()
         }
 
         binding.btnRegister.setOnClickListener {

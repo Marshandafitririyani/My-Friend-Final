@@ -38,9 +38,6 @@ interface ApiService {
         @Part photo: MultipartBody.Part?
     ): String
 
-    @GET("api/get-list-friends?users_id=2")
-    suspend fun listFriend(): String
-
     @FormUrlEncoded
     @POST("api/like")
     suspend fun like(

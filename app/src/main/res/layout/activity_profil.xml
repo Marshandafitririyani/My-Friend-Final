@@ -20,9 +20,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
             android:text="@string/profile"
             android:textColor="@color/fanta_400"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,9 +49,10 @@
         <TextView
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/name4"
-            android:textSize="@dimen/_18sdp"
             android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,11 +66,12 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_10sdp"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="@string/name_empty"
             android:padding="@dimen/_9sdp"
             android:text='@{user.name}'
             android:textColor="@color/black"
             android:textSize="@dimen/_15ssp"
-            android:hint="@string/name_empty"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,9 +82,10 @@
         <TextView
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/school4"
-            android:textSize="@dimen/_18sdp"
             android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,9 +99,10 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_1sdp"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="@string/school_empty2"
             android:padding="@dimen/_9sdp"
             android:text='@{user.school}'
-            android:hint="@string/school_empty2"
             android:textColor="@color/black"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -110,9 +115,10 @@
         <TextView
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/description4"
-            android:textSize="@dimen/_18sdp"
             android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -120,15 +126,16 @@
             app:layout_constraintVertical_bias="0.648" />
 
         <TextView
-            android:id="@+id/et_description_profil"
+            android:id="@+id/et_description_profile"
             android:layout_width="@dimen/_270sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
             android:layout_margin="@dimen/_6sdp"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="@string/description_empty2"
             android:padding="@dimen/_9sdp"
             android:text='@{user.description}'
-            android:hint="@string/description_empty2"
             android:textColor="@color/black"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -138,10 +145,11 @@
             app:layout_constraintVertical_bias="0.724" />
 
         <Button
-            android:id="@+id/btn_edit_profil"
+            android:id="@+id/btn_edit_profile"
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_40sdp"
             android:background="@drawable/custom_buttom"
+            android:fontFamily="@font/poppinsbold"
             android:foreground="?selectableItemBackground"
             android:text="@string/edit_profile"
             android:textAllCaps="false"

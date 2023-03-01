@@ -31,6 +31,7 @@ class EditProfileViewModel @Inject constructor(
 
     fun updateProfil(name: String, school: String, description: String) = viewModelScope.launch {
         _apiResponse.send(ApiResponse().responseLoading())
+        //menyimpan user
         val idUser = userDao.getId().id
         ApiObserver(
             { apiService.updateProfil(idUser, name, school, description) }, false,
@@ -38,6 +39,7 @@ class EditProfileViewModel @Inject constructor(
                 override suspend fun onSuccess(response: JSONObject) {
                     Log.d("cek data", response.toString())
                     val data = response.getJSONObject(ApiCode.DATA).toObject<User>(gson)
+                    //user di simpan di userDao
                     userDao.insert(data.copy(idRoom = 1))
                     _apiResponse.send(ApiResponse().responseSuccess("profile updated"))
                     val message = response.getString(ApiCode.MESSAGE)

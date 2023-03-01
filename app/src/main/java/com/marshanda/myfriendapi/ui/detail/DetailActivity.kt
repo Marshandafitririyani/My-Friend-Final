@@ -1,6 +1,7 @@
 package com.marshanda.myfriendapi.ui.detail
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.crocodic.core.api.ApiStatus
 import com.crocodic.core.extension.tos
@@ -21,13 +22,23 @@ class DetailActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //menerima detail  list frienda
         friend = intent.getParcelableExtra(Const.LIST.LIST)
         binding.detail = friend
+
+        initialButtonLike()
 
         viewModel.user.observe(this) {
             myUser = it
         }
+
+        //like
         binding.btnLike.setOnClickListener {
+            val myId = myUser?.id
+            val friendId = friend?.id
+            viewModel.getLike(myId, friendId)
+        }
+        binding.btnUnlike.setOnClickListener {
             val myId = myUser?.id
             val friendId = friend?.id
             viewModel.getLike(myId, friendId)
@@ -45,4 +56,15 @@ class DetailActivity :
             }
         }
     }
+
+    private fun initialButtonLike(){
+        if (friend?.like_by_you.equals("true")) {
+            binding.btnLike.visibility = View.GONE
+            binding.btnUnlike.visibility = View.VISIBLE
+        } else{
+            binding.btnLike.visibility = View.VISIBLE
+            binding.btnUnlike.visibility = View.GONE
+        }
+    }
 }
+

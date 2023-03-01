@@ -1,4 +1,4 @@
-package com.marshanda.myfriendapi.data
+package com.marshanda.myfriendapi.helper
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

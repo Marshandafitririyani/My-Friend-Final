@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/img_bgn_tranparan"
@@ -52,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
+                android:fontFamily="@font/poppinsregular"
                 android:gravity="center"
                 android:text="@string/create_your_new_account"
                 android:textColor="@color/fanta_400"
@@ -65,13 +66,16 @@
                 android:layout_marginTop="@dimen/_40sdp"
                 android:autofillHints="username"
                 android:background="@drawable/custom_box"
-                android:foreground="?selectableItemBackground"
                 android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="@dimen/_8sdp"
                 android:drawableTint="@color/abu"
-                android:hint="@string/name5"
+                android:fontFamily="@font/poppinsregular"
+                android:foreground="?selectableItemBackground"
+                android:hint="@string/name3"
                 android:inputType="textEmailAddress"
-                android:padding="@dimen/_10sdp" />
+                android:padding="@dimen/_8sdp"
+                android:paddingStart="@dimen/_10sdp"
+                tools:ignore="RtlSymmetry" />
 
 
             <EditText
@@ -82,12 +86,15 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:autofillHints="phone"
                 android:background="@drawable/custom_box"
-                android:foreground="?selectableItemBackground"
                 android:drawableStart="@drawable/ic_smartphone"
                 android:drawablePadding="@dimen/_8sdp"
-                android:hint="@string/phone4"
+                android:fontFamily="@font/poppinsregular"
+                android:foreground="?selectableItemBackground"
+                android:hint="@string/phone2"
                 android:inputType="phone"
-                android:padding="@dimen/_10sdp" />
+                android:padding="@dimen/_3sdp"
+                android:paddingStart="@dimen/_10sdp"
+                tools:ignore="RtlSymmetry" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -104,13 +111,16 @@
                     android:layout_gravity="center"
                     android:autofillHints="password"
                     android:background="@drawable/custom_box"
-                    android:foreground="?selectableItemBackground"
                     android:drawableStart="@drawable/ic_password"
                     android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:foreground="?selectableItemBackground"
                     android:hint="@string/password3"
                     android:inputType="textPassword"
-                    android:padding="@dimen/_10sdp"
-                    android:singleLine="true" />
+                    android:padding="@dimen/_8sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:singleLine="true"
+                    tools:ignore="RtlSymmetry" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -120,20 +130,23 @@
                 android:layout_height="@dimen/_40sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_50sdp"
-                android:foreground="?selectableItemBackground"
                 android:background="@drawable/custom_buttom"
+                android:fontFamily="@font/poppinsbold"
+                android:foreground="?selectableItemBackground"
                 android:text="@string/register2"
                 android:textAllCaps="false"
                 android:textSize="@dimen/_18ssp" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppinsregular"
                 android:gravity="center"
                 android:padding="@dimen/_10sdp"
                 android:text="@string/already_have_an_account_log_in"
                 android:textColor="@color/fanta_400"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>
 

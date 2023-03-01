@@ -19,12 +19,12 @@ class ProfileActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.btnEditProfil.setOnClickListener {
+        binding.btnEditProfile.setOnClickListener {
            openActivity<EditProfileActivity> {  }
 
         }
 
-        binding.btnEditProfil.setOnClickListener {
+        binding.btnEditProfile.setOnClickListener {
             val kembali = Intent(this, EditProfileActivity::class.java).apply {
                 putExtra("username", binding?.user?.name, )
                 putExtra("schoolname", binding?.user?.school)

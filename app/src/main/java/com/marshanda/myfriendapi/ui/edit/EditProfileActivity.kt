@@ -51,6 +51,7 @@ class EditProfileActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //untuk menampilkan nama yg sudah ada di profil ke editprofil (nama, sekolah, descripsi)
         username = intent.getStringExtra("username")
         schoolname = intent.getStringExtra("schoolname")
         descriptionname = intent.getStringExtra("descriptionname")
@@ -102,9 +103,9 @@ class EditProfileActivity :
             println("Compress 2")
             return Compressor.compress(this, filePhoto) {
                 resolution(720, 720)
-                quality(50)
-                format(Bitmap.CompressFormat.JPEG)
-                size(514)
+                quality(80)
+                format(Bitmap.CompressFormat.PNG)
+                size(520)
             }
         } catch (e: Exception) {
             println("Compress 3")
@@ -233,7 +234,7 @@ class EditProfileActivity :
                     Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
             }
 
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos)
             binding.ivPhotoEditProfil.setImageBitmap(bitmap)
             photoFile = file
         } catch (e: Exception) {

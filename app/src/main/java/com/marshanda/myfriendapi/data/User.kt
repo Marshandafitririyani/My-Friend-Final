@@ -38,5 +38,4 @@ data class User(
     @Expose
     @SerializedName("like_by_you")
     val like_by_you: String?,
-
-    ) : Parcelable
+) : Parcelable

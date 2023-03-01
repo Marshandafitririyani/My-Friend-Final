@@ -21,10 +21,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppinsbold"
             android:gravity="center"
             android:text="@string/detail2"
             android:textColor="@color/fanta_400"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/_23ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +33,12 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_image_detail"
+            imageUrl='@{detail.photo}'
             android:layout_width="@dimen/_160sdp"
             android:layout_height="@dimen/_160sdp"
             android:layout_gravity="center"
-            android:background="@drawable/custom_button_sircle"
+            android:background="@drawable/img_fotoedit_tranparan"
             android:contentDescription="@string/profile_photo"
-            imageUrl='@{detail.photo}'
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -49,6 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/name"
             android:textColor="@color/fanta_400"
             android:textSize="@dimen/_18sdp"
@@ -66,6 +68,7 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_10sdp"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
             android:padding="@dimen/_9sdp"
             android:text='@{detail.name}'
             android:textSize="@dimen/_15ssp"
@@ -78,6 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:gravity="clip_horizontal"
             android:text="@string/school"
             android:textColor="@color/fanta_400"
@@ -96,6 +100,7 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_1sdp"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
             android:padding="@dimen/_9sdp"
             android:text='@{detail.school}'
             android:textSize="@dimen/_15ssp"
@@ -108,6 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/description"
             android:textColor="@color/fanta_400"
             android:textSize="@dimen/_18sdp"
@@ -125,6 +131,7 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_6sdp"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
             android:padding="@dimen/_9sdp"
             android:text='@{detail.description}'
             android:textSize="@dimen/_15ssp"
@@ -139,10 +146,28 @@
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_40sdp"
             android:background="@drawable/custom_buttom"
+            android:fontFamily="@font/poppinsbold"
             android:foreground="?selectableItemBackground"
             android:text="@string/like"
             android:textAllCaps="false"
             android:textSize="@dimen/_18ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.917" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_unlike"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/custom_unlike"
+            android:foreground="?selectableItemBackground"
+            android:text="@string/unlike"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18ssp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

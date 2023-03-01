@@ -17,6 +17,7 @@ class SplashActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //supaya tidak login ulang
         val userLogin = session.getString(Const.USER.PROFILE)
 
         viewModel.splash {
@@ -29,3 +30,9 @@ class SplashActivity :
         }
     }
 }
+//mengecek menggunakan id room(splash)
+//api servis
+/*
+yg detail catagori
+menyederhanakan homeActivity yang catagori 1-3
+*/

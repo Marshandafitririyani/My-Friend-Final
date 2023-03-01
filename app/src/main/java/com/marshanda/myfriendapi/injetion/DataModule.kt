@@ -75,8 +75,6 @@ class DataModule {
 
     }
 
-    //081390095352
-
     @Provides
     fun provideApiService(okHttpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()

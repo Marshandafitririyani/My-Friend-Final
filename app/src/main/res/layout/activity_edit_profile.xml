@@ -21,16 +21,16 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
             android:text="@string/edit_profile2"
             android:textColor="@color/fanta_400"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.022" />
-
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_photo_edit_profil"
@@ -49,9 +49,10 @@
         <TextView
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/name2"
-            android:textSize="@dimen/_18sdp"
             android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,24 +66,28 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_10sdp"
             android:autofillHints="username"
-            android:foreground="?selectableItemBackground"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
+            android:foreground="?selectableItemBackground"
             android:hint="@string/username_empty"
             android:inputType="textPersonName"
-            android:padding="@dimen/_9sdp"
+            android:padding="@dimen/_5sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.444" />
+            app:layout_constraintVertical_bias="0.444"
+            tools:ignore="RtlSymmetry" />
 
         <TextView
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/school2"
-            android:textSize="@dimen/_18sdp"
             android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,24 +101,28 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_1sdp"
             android:autofillHints="text"
-            android:foreground="?selectableItemBackground"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
+            android:foreground="?selectableItemBackground"
             android:hint="@string/school_empty"
             android:inputType="text"
-            android:padding="@dimen/_9sdp"
+            android:padding="@dimen/_5sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.592" />
+            app:layout_constraintVertical_bias="0.592"
+            tools:ignore="RtlSymmetry" />
 
         <TextView
             android:layout_width="@dimen/_270sdp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
             android:text="@string/description2"
-            android:textSize="@dimen/_18sdp"
             android:textColor="@color/fanta_400"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -127,23 +136,27 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/_6sdp"
             android:autofillHints="text"
-            android:foreground="?selectableItemBackground"
             android:background="@drawable/custom_button_fram"
+            android:fontFamily="@font/poppinsregular"
+            android:foreground="?selectableItemBackground"
             android:hint="@string/description_empty"
             android:inputType="text"
-            android:padding="@dimen/_9sdp"
+            android:padding="@dimen/_5sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.737" />
+            app:layout_constraintVertical_bias="0.737"
+            tools:ignore="RtlSymmetry" />
 
         <Button
             android:id="@+id/btn_save_edit_profil"
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_40sdp"
             android:background="@drawable/custom_buttom"
+            android:fontFamily="@font/poppinsbold"
             android:foreground="?selectableItemBackground"
             android:text="@string/save"
             android:textAllCaps="false"
@@ -154,7 +167,5 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.926" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

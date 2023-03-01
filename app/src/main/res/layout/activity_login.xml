@@ -18,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_150sdp"
             android:orientation="vertical">
 
@@ -35,6 +35,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
                 android:gravity="center"
                 android:text="@string/know_your_friends"
                 android:textColor="@color/fanta_400"
@@ -47,14 +48,15 @@
                 android:layout_height="@dimen/_40sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_40sdp"
-                android:autofillHints="phone"
+                android:autofillHints="Phone"
                 android:background="@drawable/custom_box"
-                android:foreground="?selectableItemBackground"
                 android:drawableStart="@drawable/ic_smartphone"
                 android:drawablePadding="@dimen/_8sdp"
-                android:hint="@string/phone"
+                android:fontFamily="@font/poppinsregular"
+                android:foreground="?selectableItemBackground"
+                android:hint="@string/phone5"
                 android:inputType="phone"
-                android:padding="@dimen/_10sdp" />
+                android:padding="@dimen/_8sdp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -71,22 +73,24 @@
                     android:layout_gravity="center"
                     android:autofillHints="password"
                     android:background="@drawable/custom_box"
-                    android:foreground="?selectableItemBackground"
                     android:drawableStart="@drawable/ic_password"
                     android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:foreground="?selectableItemBackground"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:padding="@dimen/_10sdp"
+                    android:padding="@dimen/_8sdp"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/tv_register_login"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_235sdp"
+                android:layout_marginStart="@dimen/_230sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:background="?selectableItemBackground"
+                android:fontFamily="@font/poppinsregular"
                 android:foreground="?selectableItemBackground"
                 android:text="@string/register"
                 android:textColor="@color/fanta_400"
@@ -95,10 +99,11 @@
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="@dimen/_250sdp"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_43sdp"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_80sdp"
                 android:background="@drawable/custom_buttom"
+                android:fontFamily="@font/poppinsbold"
                 android:foreground="?selectableItemBackground"
                 android:text="@string/login"
                 android:textAllCaps="false"

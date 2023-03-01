@@ -14,6 +14,7 @@ import com.marshanda.myfriendapi.databinding.ActivityHomeBinding
 import com.marshanda.myfriendapi.databinding.CustomListFriendBinding
 import com.marshanda.myfriendapi.ui.detail.DetailActivity
 import com.marshanda.myfriendapi.ui.profil.ProfileActivity
+import com.marshanda.myfriendapi.ui.save.SaveActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -27,6 +28,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //search friend
         binding?.srcHome?.doOnTextChanged { text, start, before, count ->
             if (list.isEmpty()) {
             }
@@ -43,6 +45,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
                 }
                 binding?.rcRecyclerView?.adapter?.notifyDataSetChanged()
                 binding?.rcRecyclerView?.adapter?.notifyItemInserted(0)
+                if (list.isEmpty()){
+                    binding.tvEmpty.visibility = View.VISIBLE
+                }else{
+                    binding.tvEmpty.visibility = View.GONE
+                }
             }
         }
 
@@ -50,10 +57,16 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
             openActivity<ProfileActivity>()
         }
 
+        binding.ivSaveHome.setOnClickListener {
+            openActivity<SaveActivity>()
+        }
+
+        //fungsi logout
         binding.ivLoguot.setOnClickListener {
             viewModel.logout { tos("Logout") }
         }
 
+        //refresh
         binding.swipeRefreshLayout.setOnRefreshListener {
             user?.id?.let { viewModel.getList(it) }
         }
@@ -81,10 +94,13 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
             binding?.rcRecyclerView?.adapter?.notifyDataSetChanged()
 
             if (list.isEmpty()) {
-                binding?.tvKosong?.visibility = View.VISIBLE
+                binding.tvEmpty.visibility = View.VISIBLE
             } else {
-                binding?.tvKosong?.visibility = View.GONE
+                binding.tvEmpty.visibility = View.GONE
             }
+//            //untuk menampilkan pada layout bahwa itu kosong
+//            binding.tvKosong.isVisible = list.isEmpty()
+
             Timber.d("cek data note $it")
             listAll.clear()
             listAll.addAll(it)
