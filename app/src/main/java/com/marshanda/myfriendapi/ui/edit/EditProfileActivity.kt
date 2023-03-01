@@ -132,8 +132,7 @@ class EditProfileActivity :
                         when (it.status) {
                             ApiStatus.LOADING -> loadingDialog.show("Save Profile")
                             ApiStatus.SUCCESS -> {
-                                tos(it.message ?: "Succes Update Profile")
-                                loadingDialog.dismiss()
+                                loadingDialog.show("Succes Update Profile")
                                 openActivity<ProfileActivity>()
                                 finish()
                             }
@@ -276,7 +275,6 @@ class EditProfileActivity :
 
     @Throws(IOException::class)
     private fun createImageFile(): File {
-        // Create an image file name
         val timeStamp = DateTimeHelper().createAtLong().toString()
         val storageDir =
             getAppSpecificAlbumStorageDir(Environment.DIRECTORY_DOCUMENTS, "Attachment")
