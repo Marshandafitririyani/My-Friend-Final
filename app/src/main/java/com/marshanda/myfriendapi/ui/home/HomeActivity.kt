@@ -10,6 +10,7 @@ import com.marshanda.myfriendapi.R
 import com.marshanda.myfriendapi.base.BaseActivity
 import com.marshanda.myfriendapi.const.Const
 import com.marshanda.myfriendapi.data.User
+import com.marshanda.myfriendapi.data.UserDao
 import com.marshanda.myfriendapi.databinding.ActivityHomeBinding
 import com.marshanda.myfriendapi.databinding.CustomListFriendBinding
 import com.marshanda.myfriendapi.ui.detail.DetailActivity
@@ -17,9 +18,13 @@ import com.marshanda.myfriendapi.ui.profil.ProfileActivity
 import com.marshanda.myfriendapi.ui.save.SaveActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.activity_home) {
+
+    @Inject
+    lateinit var userDao: UserDao
 
     private val list = ArrayList<User?>()
     private val listAll = ArrayList<User?>()
@@ -27,6 +32,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        userDao.getUser().observe(this) {
+            binding.user = it
+        }
 
         binding?.srcHome?.doOnTextChanged { text, start, before, count ->
             if (list.isEmpty()) {

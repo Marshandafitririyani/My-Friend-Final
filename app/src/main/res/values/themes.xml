@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MyFriendAPI" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/fanta_200</item>
+        <item name="colorPrimary">@color/fanta_300</item>
         <item name="colorPrimaryVariant">@color/fanta_400</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

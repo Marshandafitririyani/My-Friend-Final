@@ -34,6 +34,7 @@
                     android:layout_width="@dimen/_80sdp"
                     android:layout_height="@dimen/_80sdp"
                     android:layout_margin="@dimen/_8sdp"
+                    android:background="@drawable/ic_person"
                     android:contentDescription="@string/todo7" />
 
                 <LinearLayout
@@ -45,7 +46,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:ellipsize="end"
                         android:fontFamily="@font/poppinsregular"
+                        android:maxLines="1"
                         android:text='@{data.name}'
                         android:textSize="@dimen/_18sdp"
                         android:textStyle="bold" />
@@ -53,7 +56,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:ellipsize="end"
                         android:fontFamily="@font/poppinsregular"
+                        android:maxLines="1"
                         android:text='@{data.school}'
                         android:textSize="@dimen/_12sdp" />
 

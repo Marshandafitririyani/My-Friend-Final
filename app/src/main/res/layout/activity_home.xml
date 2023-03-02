@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="user"
+            type="com.marshanda.myfriendapi.data.User" />
+    </data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -132,21 +139,21 @@
                     app:layout_constraintVertical_bias="0.0"
                     tools:tint="@color/white" />
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_profil_home"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    imageUrl='@{user.photo}'
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_marginStart="@dimen/_120sdp"
-                    android:background="?selectableItemBackground"
+                    android:background="@drawable/ic_person"
                     android:contentDescription="@string/todo"
                     android:foreground="?selectableItemBackground"
-                    android:src="@drawable/ic_person"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.031"
+                    app:layout_constraintHorizontal_bias="0.044"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintVertical_bias="0.461"
                     tools:tint="@color/white" />
 
                 <ImageView

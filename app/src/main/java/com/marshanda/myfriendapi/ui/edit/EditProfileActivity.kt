@@ -76,7 +76,6 @@ class EditProfileActivity :
             viewModel.updateProfil(name, school, description)
         } else {
             lifecycleScope.launch {
-                tos("Tunggu")
                 val compressPhoto = compressFile(photoFile!!)
                 if (compressPhoto != null) {
                     viewModel.updateProfileWithPhoto(name, school, description, compressPhoto)

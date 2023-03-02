@@ -22,6 +22,9 @@ class RegisterActivity :
         super.onCreate(savedInstanceState)
 
         binding.ivBackRegister.setOnClickListener {
+            onBackPressed()
+        }
+        binding.backLogin.setOnClickListener {
             finish()
         }
 

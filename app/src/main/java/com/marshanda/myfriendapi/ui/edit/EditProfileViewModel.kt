@@ -50,7 +50,6 @@ class EditProfileViewModel @Inject constructor(
 
     fun updateProfileWithPhoto(name: String, school: String?, description: String, photo: File) =
         viewModelScope.launch {
-            println("Nama: $name")
             val fileBody = photo.asRequestBody("multipart/form-data".toMediaTypeOrNull())
             val filePart = MultipartBody.Part.createFormData("photo", photo.name, fileBody)
             _apiResponse.send(ApiResponse().responseLoading())

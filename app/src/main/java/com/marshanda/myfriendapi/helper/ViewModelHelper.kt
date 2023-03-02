@@ -18,8 +18,8 @@ class ViewModelHelper {
                 Glide
                     .with(view.context)
                     .load(imageUrl)
-                    .placeholder(R.drawable.img_no_image)
-                    .error(R.drawable.img_errornotfound)
+                    .placeholder(R.drawable.ic_person)
+                    .error(R.drawable.img_no_image)
                     .into(view)
 
             }
