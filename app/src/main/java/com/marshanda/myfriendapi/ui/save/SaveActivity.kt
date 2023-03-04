@@ -1,6 +1,7 @@
 package com.marshanda.myfriendapi.ui.save
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -62,6 +63,11 @@ class SaveActivity : BaseActivity<ActivitySaveBinding, SaveViewModel>(R.layout.a
             list.addAll(filterByLike)
             binding?.rvFriendSave?.adapter?.notifyDataSetChanged()
             binding?.rvFriendSave?.adapter?.notifyItemInserted(0)
+            if (list.isEmpty()) {
+                binding.tvEmptySave.visibility = View.VISIBLE
+            } else {
+                binding.tvEmptySave.visibility = View.GONE
+            }
 
         }
     }

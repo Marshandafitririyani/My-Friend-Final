@@ -72,7 +72,10 @@ class EditProfileActivity :
             return
         }
 
-        if (photoFile == null && name == username && school == schoolname && description == descriptionname) {
+        if (photoFile == null) {
+            if (  name == username && school == schoolname && description == descriptionname){
+                return
+            }
             viewModel.updateProfil(name, school, description)
         } else {
             lifecycleScope.launch {
@@ -94,7 +97,7 @@ class EditProfileActivity :
                 resolution(720, 720)
                 quality(80)
                 format(Bitmap.CompressFormat.PNG)
-                size(520)
+                size(515)
             }
         } catch (e: Exception) {
             println("Compress 3")

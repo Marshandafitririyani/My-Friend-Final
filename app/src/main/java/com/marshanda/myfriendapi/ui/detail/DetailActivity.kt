@@ -42,7 +42,7 @@ class DetailActivity :
             viewModel.getLike(myId, friendId)
         }
 
-        lifecycleScope.launch {
+        /*lifecycleScope.launch {
             viewModel.apiResponse.collect {
                 if (it.status == ApiStatus.SUCCESS) {
 
@@ -52,7 +52,7 @@ class DetailActivity :
                     tos("don't like")
                 }
             }
-        }
+        }*/
     }
 
     private fun initialButtonLike() {
