@@ -81,11 +81,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         binding.rcRecyclerView.adapter =
             CoreListAdapter<CustomListFriendBinding, User>(R.layout.custom_list_friend)
                 .initItem(list) { position, data ->
-                    activityLauncher.launch(createIntent<DetailActivity> {
+                    activityLauncher.launch(createIntent<DetailActivity> { // TODO: pakai activitylauncher untuk memeriksa result code dari activity yang akan di open
                         putExtra(Const.LIST.LIST, data)
                     }) {
-                        if (it.resultCode == Const.LIST.RELOAD) {
-                            user?.id?.let { viewModel.getList(it) }
+                        if (it.resultCode == Const.LIST.RELOAD) { // TODO: cek result code apakah harus reload
+                            user?.id?.let { viewModel.getList(it) } // TODO: kalau iya, reload data, jadi tidak perlu swipe refresh secara manual
                         }
                     }
 

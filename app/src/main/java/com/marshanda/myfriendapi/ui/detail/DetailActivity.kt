@@ -33,11 +33,12 @@ class DetailActivity :
             myUser = it
         }
 
+        // TODO: cukup menggunakan 1 tombol saja
         binding.btnLike.setOnClickListener {
             val myId = myUser?.id
             val friendId = friend?.id
             viewModel.getLike(myId, friendId)
-            setResult(Const.LIST.RELOAD)
+            setResult(Const.LIST.RELOAD) // TODO: apabila tombol di klik berarti ada perubaham like, dan mengirimkan kode result agar list data di reload kembali
         }
         /*binding.btnUnlike.setOnClickListener {
             val myId = myUser?.id
