@@ -62,28 +62,13 @@
                         android:text='@{data.school}'
                         android:textSize="@dimen/_12sdp" />
 
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/heart_plain"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:contentDescription="@string/todo8"
+                        android:src='@{data.likeByYou ? @drawable/img_heart_read : @drawable/img_heart_plain}' />
 
-                        <ImageView
-                            android:id="@+id/heart_plain"
-                            android:layout_width="@dimen/_20sdp"
-                            android:layout_height="@dimen/_20sdp"
-                            android:contentDescription="@string/todo8"
-                            android:src="@drawable/img_heart_plain"
-                            android:visibility='@{data.like_by_you == "true" ? View.GONE : View.VISIBLE}' />
-
-                        <ImageView
-                            android:id="@+id/heart_read"
-                            android:layout_width="@dimen/_20sdp"
-                            android:layout_height="@dimen/_20sdp"
-                            android:contentDescription="@string/todo9"
-                            android:src="@drawable/img_heart_read"
-                            android:visibility='@{data.like_by_you != "true" ? View.GONE : View.VISIBLE}' />
-
-
-                    </FrameLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

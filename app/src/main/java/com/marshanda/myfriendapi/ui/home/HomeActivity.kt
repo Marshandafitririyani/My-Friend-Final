@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.widget.doOnTextChanged
 import com.crocodic.core.base.adapter.CoreListAdapter
+import com.crocodic.core.extension.createIntent
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
 import com.marshanda.myfriendapi.R
@@ -80,9 +81,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         binding.rcRecyclerView.adapter =
             CoreListAdapter<CustomListFriendBinding, User>(R.layout.custom_list_friend)
                 .initItem(list) { position, data ->
-                    openActivity<DetailActivity> {
+                    activityLauncher.launch(createIntent<DetailActivity> {
                         putExtra(Const.LIST.LIST, data)
-
+                    }) {
+                        if (it.resultCode == Const.LIST.RELOAD) {
+                            user?.id?.let { viewModel.getList(it) }
+                        }
                     }
 
                 }

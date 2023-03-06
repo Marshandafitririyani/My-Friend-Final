@@ -2,7 +2,9 @@ package com.marshanda.myfriendapi.ui.detail
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.crocodic.core.api.ApiStatus
 import com.crocodic.core.extension.tos
 import com.marshanda.myfriendapi.R
@@ -25,7 +27,7 @@ class DetailActivity :
         friend = intent.getParcelableExtra(Const.LIST.LIST)
         binding.detail = friend
 
-        initialButtonLike()
+        // initialButtonLike()
 
         viewModel.user.observe(this) {
             myUser = it
@@ -35,27 +37,32 @@ class DetailActivity :
             val myId = myUser?.id
             val friendId = friend?.id
             viewModel.getLike(myId, friendId)
+            setResult(Const.LIST.RELOAD)
         }
-        binding.btnUnlike.setOnClickListener {
+        /*binding.btnUnlike.setOnClickListener {
             val myId = myUser?.id
             val friendId = friend?.id
             viewModel.getLike(myId, friendId)
-        }
+        }*/
 
-        /*lifecycleScope.launch {
-            viewModel.apiResponse.collect {
-                if (it.status == ApiStatus.SUCCESS) {
-
-                    tos("like")
-
-                } else {
-                    tos("don't like")
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.apiResponse.collect {
+                        if (it.status == ApiStatus.LOADING) {
+                            loadingDialog.show(getString(R.string.waiting))
+                        } else if (it.status == ApiStatus.SUCCESS) {
+                            val liked = it.dataAs<Boolean>()
+                            binding.detail = friend?.copy(likeByYou = liked)
+                            loadingDialog.dismiss()
+                        }
+                    }
                 }
             }
-        }*/
+        }
     }
 
-    private fun initialButtonLike() {
+    /*private fun initialButtonLike() {
         if (friend?.like_by_you.equals("true")) {
             binding.btnLike.visibility = View.GONE
             binding.btnUnlike.visibility = View.VISIBLE
@@ -63,6 +70,6 @@ class DetailActivity :
             binding.btnLike.visibility = View.VISIBLE
             binding.btnUnlike.visibility = View.GONE
         }
-    }
+    }*/
 }
 

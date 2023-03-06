@@ -58,10 +58,10 @@ class SaveActivity : BaseActivity<ActivitySaveBinding, SaveViewModel>(R.layout.a
 
     private fun observe() {
         viewModel.dataList.observe(this) {
-            val filterByLike = it.filter { it.like_by_you?.contains("true", true) ?: true }
+            val filterByLike = it.filter { it.likeByYou ?: false }
             list.clear()
-            list.addAll(filterByLike)
             binding?.rvFriendSave?.adapter?.notifyDataSetChanged()
+            list.addAll(filterByLike)
             binding?.rvFriendSave?.adapter?.notifyItemInserted(0)
             if (list.isEmpty()) {
                 binding.tvEmptySave.visibility = View.VISIBLE

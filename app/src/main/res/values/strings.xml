@@ -43,7 +43,7 @@
     <string name="phone4">phone</string>
     <string name="password3">Password</string>
     <string name="register2">Register</string>
-    <string name="already_have_an_account_login">Already have an account?Log in</string>
+    <string name="already_have_an_account_login">Already have an Account? Login</string>
     <string name="my_friend5">MY FRIEND</string>
     <string name="todo6">TODO</string>
     <string name="todo7">TODO</string>
@@ -68,8 +68,9 @@
     <string name="name6">Name</string>
     <string name="phone6">Phone</string>
     <string name="password6">Password</string>
-    <string name="already_have_anaccount_login">Already Have Anaccount? Login</string>
+    <string name="already_have_anaccount_login">Already Have an Account? Login</string>
     <string name="phone7">Phone</string>
     <string name="password7">Password</string>
-    <string name="create_your_new_accoun_register">Create Your New Accoun? Register</string>
+    <string name="create_your_new_accoun_register">Create Your New Account? Register</string>
+    <string name="waiting">Waiting…</string>
 </resources>

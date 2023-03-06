@@ -28,12 +28,14 @@ class DetailViewModel @Inject constructor(
     val getDetail = userDao.getUser()
 
     fun getLike(myId: Int?, friendId: Int?) = viewModelScope.launch {
+        _apiResponse.send(ApiResponse().responseLoading())
         ApiObserver(
             { apiService.like(id_like = friendId, id = myId) },
-            false,
+            true,
             object : ApiObserver.ResponseListener {
                 override suspend fun onSuccess(response: JSONObject) {
-                    _apiResponse.send(ApiResponse().responseSuccess("Liked"))
+                    val liked = response.getBoolean("liked")
+                    _apiResponse.send(ApiResponse().responseSuccess(data = liked))
                     Timber.d("cek api like $response")
                 }
             })

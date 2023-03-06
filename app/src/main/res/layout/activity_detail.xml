@@ -145,10 +145,10 @@
             android:id="@+id/btn_like"
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_40sdp"
-            android:background="@drawable/custom_buttom"
+            android:background='@{detail.likeByYou ? @drawable/custom_unlike : @drawable/custom_buttom}'
             android:fontFamily="@font/poppinsbold"
             android:foreground="?selectableItemBackground"
-            android:text="@string/like"
+            android:text='@{detail.likeByYou ? @string/unlike : @string/like}'
             android:textAllCaps="false"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -157,7 +157,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.917" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <!--<androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_unlike"
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_40sdp"
@@ -172,7 +172,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.917" />
+            app:layout_constraintVertical_bias="0.917" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

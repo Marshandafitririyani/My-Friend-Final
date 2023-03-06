@@ -10,5 +10,6 @@ object Const {
     }
     object LIST{
         const val LIST = "list"
+        const val RELOAD = 876
     }
 }
