@@ -37,7 +37,9 @@ class SaveViewModel @Inject constructor(
                     dataList.postValue(data)
                     Timber.d("cek api ${data.size}")
                 }
-            })
+
+            }
+        )
 
 
     }

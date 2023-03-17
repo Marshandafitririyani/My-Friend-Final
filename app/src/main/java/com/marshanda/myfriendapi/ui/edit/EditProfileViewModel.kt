@@ -38,14 +38,14 @@ class EditProfileViewModel @Inject constructor(
                 override suspend fun onSuccess(response: JSONObject) {
                     Log.d("cek data", response.toString())
                     val data = response.getJSONObject(ApiCode.DATA).toObject<User>(gson)
-                    //user di simpan di userDao
                     userDao.insert(data.copy(idRoom = 1))
                     _apiResponse.send(ApiResponse().responseSuccess("profile updated"))
                     val message = response.getString(ApiCode.MESSAGE)
                     _apiResponse.send(ApiResponse(status = ApiStatus.SUCCESS, message = message))
 
                 }
-            })
+            }
+        )
     }
 
     fun updateProfileWithPhoto(name: String, school: String?, description: String, photo: File) =
@@ -63,9 +63,7 @@ class EditProfileViewModel @Inject constructor(
                         val data = response.getJSONObject(ApiCode.DATA).toObject<User>(gson)
                         userDao.insert(data.copy(idRoom = 1))
                         _apiResponse.send(ApiResponse().responseSuccess("profile updated"))
-
                     }
-
                     override suspend fun onError(response: ApiResponse) {
                         super.onError(response)
                         Log.d("cek photo", response.toString())
@@ -73,6 +71,7 @@ class EditProfileViewModel @Inject constructor(
                     }
 
 
-                })
+                }
+            )
         }
 }

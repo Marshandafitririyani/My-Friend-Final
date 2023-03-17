@@ -25,7 +25,6 @@ class HomeViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val dataList = MutableLiveData<List<User>>()
-
     val myUser = userDao.getUser()
 
     fun getList(userId: Int?) = viewModelScope.launch {
@@ -38,7 +37,8 @@ class HomeViewModel @Inject constructor(
                     dataList.postValue(data)
                     Timber.d("cek api ${data.size}")
                 }
-            })
+            }
+        )
 
 
     }
