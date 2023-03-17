@@ -26,6 +26,7 @@ class ProfileActivity :
 
         binding.btnEditProfile.setOnClickListener {
             val kembali = Intent(this, EditProfileActivity::class.java).apply {
+                putExtra("photo", binding?.user?.photo, )
                 putExtra("username", binding?.user?.name, )
                 putExtra("schoolname", binding?.user?.school)
                 putExtra("descriptionname", binding?.user?.description)

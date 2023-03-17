@@ -44,6 +44,7 @@ class EditProfileActivity :
 
 
     private var photoFile: File? = null
+    private var photo: String? = null
     private var username: String? = null
     private var schoolname: String? = null
     private var descriptionname: String? = null
@@ -51,10 +52,12 @@ class EditProfileActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        photo = intent.getStringExtra("photo")
         username = intent.getStringExtra("username")
         schoolname = intent.getStringExtra("schoolname")
         descriptionname = intent.getStringExtra("descriptionname")
         binding.edit = this
+        binding.photo = photo
         binding.etNameEditProfil.setText(username)
         binding.etSchoolEditProfil.setText(schoolname)
         binding.etDsctionEditProfil.setText(descriptionname)

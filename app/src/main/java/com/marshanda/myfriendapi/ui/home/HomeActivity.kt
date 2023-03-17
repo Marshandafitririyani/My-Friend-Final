@@ -18,7 +18,6 @@ import com.marshanda.myfriendapi.ui.detail.DetailActivity
 import com.marshanda.myfriendapi.ui.profil.ProfileActivity
 import com.marshanda.myfriendapi.ui.save.SaveActivity
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -81,11 +80,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         binding.rcRecyclerView.adapter =
             CoreListAdapter<CustomListFriendBinding, User>(R.layout.custom_list_friend)
                 .initItem(list) { position, data ->
-                    activityLauncher.launch(createIntent<DetailActivity> { // TODO: pakai activitylauncher untuk memeriksa result code dari activity yang akan di open
+                    activityLauncher.launch(createIntent<DetailActivity> {
                         putExtra(Const.LIST.LIST, data)
                     }) {
-                        if (it.resultCode == Const.LIST.RELOAD) { // TODO: cek result code apakah harus reload
-                            user?.id?.let { viewModel.getList(it) } // TODO: kalau iya, reload data, jadi tidak perlu swipe refresh secara manual
+                        if (it.resultCode == Const.LIST.RELOAD) {
+                            user?.id?.let { viewModel.getList(it) }
                         }
                     }
 
@@ -109,7 +108,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
                 binding.tvEmpty.visibility = View.GONE
             }
 
-            Timber.d("cek data note $it")
             listAll.clear()
             listAll.addAll(it)
         }

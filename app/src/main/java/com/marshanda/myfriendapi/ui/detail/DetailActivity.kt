@@ -27,24 +27,16 @@ class DetailActivity :
         friend = intent.getParcelableExtra(Const.LIST.LIST)
         binding.detail = friend
 
-        // initialButtonLike()
-
         viewModel.user.observe(this) {
             myUser = it
         }
 
-        // TODO: cukup menggunakan 1 tombol saja
         binding.btnLike.setOnClickListener {
             val myId = myUser?.id
             val friendId = friend?.id
             viewModel.getLike(myId, friendId)
-            setResult(Const.LIST.RELOAD) // TODO: apabila tombol di klik berarti ada perubaham like, dan mengirimkan kode result agar list data di reload kembali
+            setResult(Const.LIST.RELOAD)
         }
-        /*binding.btnUnlike.setOnClickListener {
-            val myId = myUser?.id
-            val friendId = friend?.id
-            viewModel.getLike(myId, friendId)
-        }*/
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -62,15 +54,5 @@ class DetailActivity :
             }
         }
     }
-
-    /*private fun initialButtonLike() {
-        if (friend?.like_by_you.equals("true")) {
-            binding.btnLike.visibility = View.GONE
-            binding.btnUnlike.visibility = View.VISIBLE
-        } else {
-            binding.btnLike.visibility = View.VISIBLE
-            binding.btnUnlike.visibility = View.GONE
-        }
-    }*/
 }
 

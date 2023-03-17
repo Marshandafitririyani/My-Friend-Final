@@ -37,5 +37,5 @@ data class User(
     val totalLike: String?,
     @Expose
     @SerializedName("like_by_you")
-    val likeByYou: Boolean?  // TODO: harunya ini boolean dan camelCase
+    val likeByYou: Boolean?
 ) : Parcelable

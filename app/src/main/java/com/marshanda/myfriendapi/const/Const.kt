@@ -10,6 +10,6 @@ object Const {
     }
     object LIST{
         const val LIST = "list"
-        const val RELOAD = 876 // TODO: result code untuk memberi tahu harus reload data lagi
+        const val RELOAD = 876
     }
 }

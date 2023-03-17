@@ -17,9 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     private val apiService: ApiService,
-    private val gson: Gson,
     private val userDao: UserDao,
-    private val session: CoreSession
 
 ) : BaseViewModel() {
 
@@ -28,17 +26,18 @@ class DetailViewModel @Inject constructor(
     val getDetail = userDao.getUser()
 
     fun getLike(myId: Int?, friendId: Int?) = viewModelScope.launch {
-        _apiResponse.send(ApiResponse().responseLoading()) // TODO: memberi tahu kalau sedang ada proses
+        _apiResponse.send(ApiResponse().responseLoading())
         ApiObserver(
             { apiService.like(id_like = friendId, id = myId) },
             true,
             object : ApiObserver.ResponseListener {
                 override suspend fun onSuccess(response: JSONObject) {
-                    val liked = response.getBoolean("liked") // TODO: mendapatkan status sekarang liked atau unlike
+                    val liked = response.getBoolean("liked")
                     _apiResponse.send(ApiResponse().responseSuccess(data = liked))
                     Timber.d("cek api like $response")
                 }
-            })
+            }
+        )
 
 
     }

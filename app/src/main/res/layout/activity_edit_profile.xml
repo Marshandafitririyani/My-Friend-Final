@@ -8,6 +8,10 @@
         <variable
             name="edit"
             type="com.marshanda.myfriendapi.ui.edit.EditProfileActivity" />
+
+        <variable
+            name="photo"
+            type="String" />
     </data>
 
 
@@ -37,6 +41,7 @@
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_150sdp"
             android:layout_gravity="center"
+            imageUrl='@{photo}'
             android:src="@drawable/img_fotoedit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
