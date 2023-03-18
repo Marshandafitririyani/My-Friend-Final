@@ -138,7 +138,6 @@ class EditProfileActivity :
                             ApiStatus.LOADING -> loadingDialog.show("Save Profile")
                             ApiStatus.SUCCESS -> {
                                 loadingDialog.show("Succes Update Profile")
-                                openActivity<ProfileActivity>()
                                 finish()
                             }
                             else -> loadingDialog.setResponse(it.message ?: return@collect)
